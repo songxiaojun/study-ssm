@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/task 
+	http://www.springframework.org/schema/task/spring-task-4.3.xsd ">
+
+	<!-- 0/5 0 1 * * ? [秒] [分] [小时] [日] [月] [周] [年] -->
+	<!-- <bean id="globalTask" class="com.smallchill.common.task.GlobalTask"></bean>
+	<task:scheduled-tasks>
+		每一分钟执行一次
+		<task:scheduled ref="globalTask" method="run" cron="0 0/1 * * * ?" />
+		早九点到晚五点每三十分钟执行一次
+		 <task:scheduled ref="globalTask" method="queryOrder" cron="0 0/1 * * * ?" /> 
+	</task:scheduled-tasks> -->
+	
+	<!-- <bean id="orderQueryTask" class="com.smallchill.common.task.OrderQueryTask"></bean>
+	<task:scheduled-tasks>
+		每一分钟执行一次
+		<task:scheduled ref="orderQueryTask" method="run" cron="0 0/1 * * * ?" />
+		早九点到晚五点每三十分钟执行一次
+		 <task:scheduled ref="globalTask" method="queryOrder" cron="0 0/1 * * * ?" /> 
+	</task:scheduled-tasks> -->
+	<!-- 早九点到晚五点每120分钟执行一次 -->
+		<!-- <task:scheduled ref="globalTask" method="run" cron="0 0/120 8-23 * * ?" /> -->
+	
+	
+	
+	<!-- <bean id="withdrawTask" class="com.smallchill.common.task.WithdrawTask"></bean>
+	<task:scheduled-tasks>
+		<task:scheduled ref="withdrawTask" method="run" cron="0 0/120 * * * ?" />
+	</task:scheduled-tasks>
+	
+	<bean id="transferTask" class="com.smallchill.common.task.TransferPayTask"></bean>
+	<task:scheduled-tasks>
+		<task:scheduled ref="transferTask" method="run" cron="0 0/5 * * * ?" />
+	</task:scheduled-tasks>
+
+	<bean id="consumerProfitTask" class="com.smallchill.common.task.ConsumerProfitTask"></bean>
+	<task:scheduled-tasks>
+		<task:scheduled ref="consumerProfitTask" method="run" cron="0 0/5 * * * ?" />
+	</task:scheduled-tasks>
+ 
+ 	<bean id="InsertDetailTask" class="com.smallchill.common.task.InsertDetailTask"></bean>
+	<task:scheduled-tasks>
+		<task:scheduled ref="InsertDetailTask" method="run" cron="0 0/3 * * * ?" />
+	</task:scheduled-tasks>
+	
+	<bean id="EyeTask" class="com.smallchill.common.task.EyeTask"></bean>
+	<task:scheduled-tasks>
+		<task:scheduled ref="EyeTask" method="run" cron="0 0/1 * * * ?" />
+	</task:scheduled-tasks>
+	
+	 <bean id="LogisticsTask" class="com.smallchill.common.task.LogisticsTask"></bean>
+	<task:scheduled-tasks>
+		<task:scheduled ref="LogisticsTask" method="run" cron="0 0/60 * * * ?" />
+	</task:scheduled-tasks> -->
+	
+	<bean id="marketrecordTask" class="com.teamnavi.zsgroup.task.MarketrecordTask"></bean>
+	<bean id="bondRecoveredTask" class="com.teamnavi.zsgroup.task.BondRecoveredTask"></bean>
+	<bean id="interestTask" class="com.teamnavi.zsgroup.task.InterestTask"></bean>
+	<!-- <task:scheduled-tasks> 
+		
+		 <task:scheduled ref="bondRecoveredTask" method="run" cron="0 0/1 * * * ?" /> 
+		 <task:scheduled ref="marketrecordTask" method="run"  cron="0 0/1 * * * ?"/>
+		<task:scheduled ref="interestTask" method="run"  cron="0 0/1 * * * ?" />
+	</task:scheduled-tasks> -->
+	
+</beans>
