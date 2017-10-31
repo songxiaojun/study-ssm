@@ -2,10 +2,8 @@ package com.hfuu.ssm.utils;
 
 
 public class ApiResponseMessage {
-
-
-	// 返回状态码   (默认0:成功,1:失败)
-	private int code = 0;
+	// 返回状态码   (默认1:成功,0:失败)
+	private int code = 1;
 
 	// 返回的中文消息
 	private String message;
@@ -49,7 +47,7 @@ public class ApiResponseMessage {
 
 	public ApiResponseMessage addError(String message) {
 		this.message = message;
-		this.code = 1;
+		this.code = 0;
 		this.data = null;
 		return this;
 	}
@@ -71,16 +69,13 @@ public class ApiResponseMessage {
 	public ApiResponseMessage success(Object data) {
 		this.message = "success";
 		this.data = data;
-		this.code = 0;
+		this.code = 1;
 		return this;
 	}
 
 	public boolean isSuccess() {
-		return getCode() == 0;
+		return getCode() == 1;
 	}
 
-	@Override
-	public String toString() {
-		return JsonKit.toJson(this);
-	}
+	
 }
